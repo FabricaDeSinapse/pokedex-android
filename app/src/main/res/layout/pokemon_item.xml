@@ -22,13 +22,12 @@
 
         <ImageView
             android:id="@+id/ivPokemon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="@drawable/charmander"
             android:contentDescription="Pokemon Image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,12 +67,12 @@
                 android:id="@+id/tvType1"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:background="#FD7D24"
+                android:background="#A4ACAF"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#212121"
                 android:textSize="12sp"
-                tools:text="Fire" />
+                tools:text="Type" />
 
             <TextView
                 android:id="@+id/tvType2"
@@ -81,10 +80,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:background="#FD7D24"
+                android:background="#A4ACAF"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF"
+                android:textColor="#212121"
                 android:textSize="12sp"
                 tools:text="Fire" />
         </LinearLayout>
