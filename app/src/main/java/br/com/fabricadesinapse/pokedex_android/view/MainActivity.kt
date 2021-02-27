@@ -13,7 +13,9 @@ import br.com.fabricadesinapse.pokedex_android.viewmodel.PokemonViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var recyclerView: RecyclerView
+    private val recyclerView by lazy {
+        findViewById<RecyclerView>(R.id.rvPokemons)
+    }
 
     private val viewModel by lazy {
         ViewModelProvider(this, PokemonViewModelFactory())
@@ -23,8 +25,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        recyclerView = findViewById(R.id.rvPokemons)
 
         viewModel.pokemons.observe(this, Observer {
             loadRecyclerView(it)
