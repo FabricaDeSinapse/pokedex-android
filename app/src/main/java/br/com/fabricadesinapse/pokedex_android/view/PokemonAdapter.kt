@@ -1,5 +1,6 @@
 package br.com.fabricadesinapse.pokedex_android.view
 
+
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
 import br.com.fabricadesinapse.pokedex_android.domain.Pokemon
-import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
 
 
 class PokemonAdapter(
@@ -28,8 +29,8 @@ class PokemonAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-
         holder.bindView(item)
+        holder.itemView.tag = item // Define o item do Pokémon como tag do itemView
     }
 
     fun getPositionOfPokemon(pokemonName: String): Int {
@@ -54,7 +55,7 @@ class PokemonAdapter(
 
                 if (item != null) {
                     val intent = Intent(context, DetailActivity::class.java)
-                    intent.putExtra("pokemonName", item.getName())
+                    intent.putExtra("pokemonNumber", item.obtainNumber())
                     context.startActivity(intent)
                 } else {
                     Toast.makeText(context, "Selecione um Pokemon primeiro", Toast.LENGTH_SHORT).show()
@@ -69,7 +70,8 @@ class PokemonAdapter(
             val tvType2 = findViewById<TextView>(R.id.tvType2Detail)
 
             item?.let {
-                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+                //Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+                Picasso.get().load(it.imageUrl).into(ivPokemon)
                 tvNumber.text = "Nº ${item.formattedNumber}"
                 tvName.text = item.formattedName
                 tvType1.text = item.types[0].name.capitalize()

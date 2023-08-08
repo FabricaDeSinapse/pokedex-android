@@ -12,7 +12,9 @@
     android:layout_marginRight="16dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="9sp">
 
 
     <Button
@@ -23,8 +25,10 @@
         android:layout_marginLeft="1dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
-        android:text="Button"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent"
+        android:text="@string/nada"
+        android:textSize="0sp"
+        android:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

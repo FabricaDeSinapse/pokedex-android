@@ -15,6 +15,7 @@ object PokemonRepository {
     private val service: PokemonService
 
     init {
+        //RETROFIT --
         val retrofit = Retrofit.Builder()
             .baseUrl("https://pokeapi.co/api/v2/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -40,26 +41,19 @@ object PokemonRepository {
     private fun PokemonApiResult?.toPokemon(): Pokemon? {
         if (this != null) {
             val formattedName = name.capitalize()
-            val formattedNumber = id.toString().padStart(3, '0')
-            val imageUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/$formattedNumber.png"
             val types = types.map { PokemonType(it.type.name) }
             return Pokemon(id, formattedName, types)
         }
         return null
     }
 
-    // Método para procurar Pokémon por nome usando Retrofit
+    // Método para procurar Pokémon por nome usando o Retrofit criado!
     fun searchPokemonByName(
         name: String,
         onSuccess: (Pokemon?) -> Unit,
-        onFailure: () -> Unit
+        onFailure: () -> Unit,
+        service: PokemonService = this.service // parâmetro opcional
     ) {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val service = retrofit.create(PokemonService::class.java)
         val call = service.searchPokemonByName(name.toLowerCase())
 
         call.enqueue(object : Callback<PokemonApiResult> {
@@ -78,5 +72,4 @@ object PokemonRepository {
             }
         })
     }
-
 }

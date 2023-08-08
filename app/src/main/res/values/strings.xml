@@ -2,4 +2,6 @@
     <string name="app_name">pokedex-android</string>
     <string name="pesquisa">Procurando algum Pokemon?</string>
     <string name="imagelogo">Pokemon!</string>
+    <string name="nada">nada deve aparecer aqui!</string>
+    <string name="voltar">Voltar!</string>
 </resources>

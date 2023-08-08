@@ -13,7 +13,8 @@
         android:theme="@style/Theme.Pokedexandroid">
         <activity
             android:name=".view.SplashActivity"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,6 +26,18 @@
             android:windowSoftInputMode="adjustPan"
             android:label="MainActivity">
         </activity>
+        <activity
+            android:name=".view.DetailActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="DetailActivity">
+        </activity>
+
+        <activity
+            android:name=".view.FavoriteActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="FavoriteActivity">
+        </activity>
+
     </application>
 
 </manifest>

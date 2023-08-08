@@ -1,15 +1,25 @@
 package br.com.fabricadesinapse.pokedex_android.domain
 
+import com.google.gson.annotations.SerializedName
+
 data class PokemonDetail(
-    val weight: String,
-    val height: String,
-    val hp: Int,
-    val attack: Int,
-    val defense: Int,
-    val SpAtk: Int,
-    val SpDef: Int,
-    val Speed: Int
-) {
-    val formattedWeight = weight.capitalize()
-    val formattedHeight = height.capitalize()
-}
+    val name: String,
+    val weight: Double,
+    val height: Double,
+    val types: List<PokemonTypeSlot>,
+    val stats: List<PokemonStat>
+)
+
+data class PokemonTypeSlot(
+    val slot: Int,
+    val type: Type
+)
+
+data class Type(
+    val name: String
+)
+
+data class PokemonStat(
+    @SerializedName("base_stat")
+    val baseStat: Int
+)

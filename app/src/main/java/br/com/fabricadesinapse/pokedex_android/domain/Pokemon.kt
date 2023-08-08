@@ -7,12 +7,16 @@ data class Pokemon(
 ) {
     val formattedName = name.capitalize()
 
-    val formattedNumber = number.toString().padStart(3, '0')
+    val formattedNumber = String.format("%d", number)
 
-    val imageUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/$formattedNumber.png"
+    val imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$formattedNumber.png"
 
     @JvmName("getName1")
     fun getName(): String {
         return formattedName
+    }
+
+    fun obtainNumber(): Int {
+        return number
     }
 }
