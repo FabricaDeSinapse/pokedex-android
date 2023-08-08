@@ -8,5 +8,5 @@
 - :heavy_check_mark: A página de detalhes do pokemon poderia ser estilizada de acordo com o pokemon né? Se for do tipo fogo, o tema poderia ser vermelho.. [Agradecimentos ao https://github.com/JoaoPedroPPS pela ajuda!]
 
 - :x: Faltando botão de deletar pokemon dos favoritos.
-- :x: É necessário atribuir as responsabilidades corretas à classe DetailActivity.kt, entrando em desacordo com as boas práticas de programação, necessitaria de um desenvolvedor mais experiente para a refatoração... no meu estado atual de conhecimento (Felipe) eu não conseguiria refatorar as classes... talvez o mestre Paulo Salvatore consiga 😎
+- :x: É necessário atribuir as responsabilidades corretas à classe DetailActivity.kt, entrando em desacordo com as boas práticas de programação, necessitaria de um desenvolvedor mais experiente para a refatoração... no meu estado atual de conhecimento (Felipe) não consigo refatorar as classes... talvez o mestre Paulo Salvatore consiga 😎
 - :x: Está demorando *MUUITO* para carregar os pokemons, em vez de carregar um monte deles de uma vez, poderia ter um sistema de carregamento de acordo com a rolagem.
