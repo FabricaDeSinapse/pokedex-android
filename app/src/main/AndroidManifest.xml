@@ -11,13 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pokedexandroid">
-        <activity android:name=".view.MainActivity">
+        <activity
+            android:name=".view.SplashActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="MainActivity">
+        </activity>
+        <activity
+            android:name=".view.DetailActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="DetailActivity">
+        </activity>
+
+        <activity
+            android:name=".view.FavoriteActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:label="FavoriteActivity">
+        </activity>
+
     </application>
 
 </manifest>
